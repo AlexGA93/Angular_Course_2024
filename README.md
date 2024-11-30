@@ -11,7 +11,7 @@ ng new <project_name> --standalone false
 
 **NOTE**: If you are in a previous version than 17 is not neccessary the flag
 
-### Create a new component
+### Create a new component, service or module
 
 We can create a component manually but we can instead use de angular CLI:
 
@@ -23,4 +23,10 @@ Or we can use a short version
 
 ```
 ng g c <component_name>
+```
+
+### Production building
+
+```
+npm run build
 ```
