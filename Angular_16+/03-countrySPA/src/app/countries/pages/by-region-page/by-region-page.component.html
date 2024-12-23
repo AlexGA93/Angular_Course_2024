@@ -1,0 +1,28 @@
+<h2>{{ title }}</h2>
+<hr>
+
+<div class="row">
+    <div class="col d-flex">
+        <!-- Search Regions -->
+        <button 
+            *ngFor="let region of regions"
+            class="btn m-2"
+            [ngClass]="{ 'btn-outline-primary': selectedRegion === region }"
+            (click)="searchByRegion(region)"
+        >
+            {{ region }}
+        </button>
+        <hr>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <!-- loader -->
+        <shared-loading-spinner *ngIf="isLoading" />
+        <!-- Results Table -->
+        <countries-table 
+        [countries]="countries"
+        />
+    </div>
+</div>

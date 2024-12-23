@@ -1,0 +1,25 @@
+<h2>{{ title }}</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <!-- Search Box -->
+        <shared-search-box 
+        (onDebounce)="searchByCountryName($event)"
+        [inputTitle]="title"
+        [inputPlaceHolder]="placeholder"
+        />
+        <hr>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <!-- loader -->
+        <shared-loading-spinner *ngIf="isLoading" />
+        <!-- Results Table -->
+        <countries-table 
+        [countries]="countries"
+        />
+    </div>
+</div>
