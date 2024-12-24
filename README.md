@@ -30,3 +30,17 @@ ng g c <component_name>
 ```
 npm run build
 ```
+
+### Lazy load mocule creation
+
+Example of a module with component creation and implementation of the lazy load et the app-routing module
+
+```
+ng g m <module_name> --module app --route <route_name>
+```
+
+- Example:
+
+```
+ng g m products --module app --route products
+```

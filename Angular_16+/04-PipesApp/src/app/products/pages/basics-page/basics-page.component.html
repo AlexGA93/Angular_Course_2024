@@ -1,0 +1,109 @@
+<p-panel header="Basic Pipes" class="p-1">
+    <p>Angular included Pipes - Usually in Common Module</p>
+</p-panel>
+
+<div class="grid mt-2">
+    <div class="col-12 md:col-4">
+        <p-card header="uppercase">
+            {{ nameLower | uppercase }}
+        </p-card>
+    </div>
+    <div class="col-12 md:col-4">
+        <p-card header="lowercase">
+            {{ nameUpper | lowercase }}
+        </p-card>
+    </div>
+    <div class="col-12 md:col-4">
+        <p-card header="Date">
+            {{ fullName | titlecase}}
+        </p-card>
+    </div>
+    <div class="col-12 md:col-6">
+        <p-card header="Date">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    "date"
+                </li>
+                <li class="list-group-item">
+                    "date" | date
+                </li>
+                <li class="list-group-item">
+                    "date" | date:'short'
+                </li>
+                <li class="list-group-item">
+                    "date" | date:'medium'
+                </li>
+                <li class="list-group-item">
+                    "date" | date:'long'
+                </li>
+                <li class="list-group-item">
+                    "date" | date:'MMM'
+                </li>
+                <li class="list-group-item">
+                    "date" | date:"MMMM dd, yyyy 'at' hh:mm a"
+                </li>
+            </ul>
+
+            <hr>
+
+            <ol class="list-group">
+                <li class="list-group-item">
+                    "date" | date:'long':'GMT-6'
+                </li>
+                <li class="list-group-item">
+                    "date" | date:'long':'GMT-4'
+                </li>
+                <li class="list-group-item">
+                    "date" | date:'long':'GMT-4':'ca-ES-valencia'
+                </li>
+                <li class="list-group-item">
+                    "date" | date:'long':'GMT-4':'ja'
+                </li>
+            </ol>
+        </p-card>
+    </div>
+    <div class="col-12 md:col-6">
+        <p-card header="Date">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    {{ customDate }}
+                </li>
+                <li class="list-group-item">
+                    {{ customDate | date }}
+                </li>
+                <li class="list-group-item">
+                    {{ customDate | date:'short' }}
+                </li>
+                <li class="list-group-item">
+                    {{ customDate | date:'medium' }}
+                </li>
+                <li class="list-group-item">
+                    {{ customDate | date:'long' }}
+                </li>
+                <li class="list-group-item">
+                    {{ customDate | date:'MMM' }}
+                </li>
+                <li class="list-group-item">
+                    {{ customDate | date:"MMMM dd, yyyy 'at' hh:mm a"}}
+                </li>
+            </ul>
+
+            <hr>
+
+            <ol class="list-group">
+                <li class="list-group-item">
+                    {{ customDate | date:'long':'GMT-6' }}
+                </li>
+                <li class="list-group-item">
+                    {{ customDate | date:'long':'GMT-4' }}
+                </li>
+                <li class="list-group-item">
+                    {{ customDate | date:'long':'':'ca-ES-valencia' }}
+                </li>
+                <li class="list-group-item">
+                    {{ customDate | date:'long':'':'ja' }}
+                </li>
+            </ol>
+        </p-card>
+    </div>
+</div>
