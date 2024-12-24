@@ -1,0 +1,30 @@
+<p-panel header="Numeric Pipes" class="p-1">
+    <p>Angular included Pipes - Usually in Common Module</p>
+</p-panel>
+
+<div class="grid mt-2">
+    <div class="col-12 md:col-4">
+        <p-card header="Sales" subheader="Of this year">
+            {{ totalShell | number }} / {{ totalShell | number:'1.6-6' }}
+        </p-card>
+    </div>
+    <div class="col-12 md:col-4">
+        <p-card header="Currencies" subheader="Of this year">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    {{ totalShell }}
+                </li>
+                <li class="list-group-item">
+                    {{ totalShell | currency }}
+                </li>
+                <li class="list-group-item">
+                    {{ totalShell | currency:'EUR' }} | {{ totalShell | currency:'EUR':'symbol-narrow':'1.4-4' }}
+                </li>
+                <li class="list-group-item">
+                    {{ totalShell | currency:'JPY' }} | {{ totalShell | currency:'JPY':'symbol-narrow' }}
+                </li>
+            </ul>
+            
+        </p-card>
+    </div>
+</div>
