@@ -1,0 +1,22 @@
+<div class="flex flex-column">
+  <span class="text-lg mb-4">Login</span>
+
+  <mat-form-field>
+    <mat-label>User Email</mat-label>
+    <input type="email" matInput placeholder="User Email" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input type="password" matInput placeholder="User Password" />
+  </mat-form-field>
+
+  <button mat-button mat-flat-button color="primary" (click)="onLogin()">
+    <mat-icon>save</mat-icon>
+    Log In
+  </button>
+
+  <div class="flex justify-content-end mt-5">
+    <a routerLink="/auth/register">Already an account?</a>
+  </div>
+</div>
