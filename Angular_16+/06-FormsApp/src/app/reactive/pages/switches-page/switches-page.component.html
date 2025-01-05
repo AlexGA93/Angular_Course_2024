@@ -1,7 +1,10 @@
 <h2>Reactive: Switches</h2>
 <hr>
 
-<form autocomplete="off">
+<form 
+    [formGroup]="myForm"
+    (ngSubmit)="onSave()"
+    autocomplete="off">
 
     <!-- Radio -->
     <div class="row mb-3">
@@ -12,7 +15,9 @@
                 <input class="form-check-input"
                        type="radio"
                        value="M"
-                       id="radioMasculino">
+                       id="radioMasculino"
+                       formControlName="gender"
+                       >
                 <label class="form-check-label" for="radioMasculino">
                   Male
                 </label>
@@ -22,7 +27,9 @@
                 <input class="form-check-input"
                        type="radio"
                        value="F"
-                       id="radioFemenino">
+                       id="radioFemenino"
+                       formControlName="gender"
+                       >
                 <label class="form-check-label" for="radioFemenino">
                   Female
                 </label>
@@ -39,7 +46,9 @@
             <div class="form-check form-switch mt-2">
                 <input class="form-check-input"
                        type="checkbox"
-                       id="flexSwitchCheckChecked">
+                       id="flexSwitchCheckChecked"
+                       formControlName="wantNotifications"
+                       >
                 <label class="form-check-label" for="flexSwitchCheckChecked">I want to receive notifications</label>
             </div>
 
@@ -53,12 +62,16 @@
             <div class="form-check">
                 <input class="form-check-input"
                        type="checkbox"
-                       id="flexCheckDefault">
+                       id="flexCheckDefault"
+                       formControlName="termsAndConditions"
+                       >
                 <label class="form-check-label" for="flexCheckDefault">
                   Terms and conditions of use
                 </label>
               </div>
-              <span class="form-text text-danger">
+              <span 
+                *ngIf="isValidField('termsAndConditions')"
+                class="form-text text-danger">
                  You must accept the terms of use
               </span>
 
@@ -78,18 +91,19 @@
 </form>
 
 <h5>Form Value</h5>
-<pre>{{ 'object' | json }}</pre>
+<pre>{{ myForm.value | json }}</pre>
 <br>
 
 <h5>Person</h5>
-<pre>{{ 'object' | json }}</pre>
+<pre>{{ person| json }}</pre>
+<br>
+
+<h5>Touched</h5>
+<pre>{{ myForm.touched | json }}</pre>
 <br>
 
 <h5>Valid</h5>
-<pre>{{ 'object' | json }}</pre>
+<pre>{{ myForm.valid| json }}</pre>
+<br>
 
-<!-- <h5>Terms</h5> -->
-<!-- <pre>{{ myForm.controls?.terminos?.errors | json }}</pre> -->
 
-<!-- <br>
-<pre>Conditions: </pre> -->
