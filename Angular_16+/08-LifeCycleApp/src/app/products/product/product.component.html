@@ -1,0 +1,63 @@
+<p>product works!</p>
+
+<app-price 
+    *ngIf="isProductVisible"
+    [price]="currentPrice"
+    />
+
+<button (click)="isProductVisible = !isProductVisible">Toggle</button>
+<!-- 
+ngDoCheck                       product.component.ts:37:12
+ngAfterContentChecked           product.component.ts:49:12
+-----------------------------------------------------------------------
+price constructor               price.component.ts:14:12
+price's ngOnChanges             price.component.ts:21:12
+Object { changes: {…} }         price.component.ts:22:12
+{
+  "changes": {
+    "price": {
+      "currentValue": 10,
+      "firstChange": true,
+      "previousValue": undefined
+    }
+  }
+}
+
+price's ngOnInit                price.component.ts:18:12
+-----------------------------------------------------------------------
+ngAfterViewChecked              product.component.ts:61:12
+
+
+
+* IF WE TOGGLE A SECOND TIME WE WILL HIDE (DESTROY) THE SON COMPONENT
+
+ngDoCheck               product.component.ts:37:12
+ngAfterContentChecked   product.component.ts:49:12
+-----------------------------------------------------------------------
+price's ngOnDestroy     price.component.ts:25:12  *******
+-----------------------------------------------------------------------
+ngAfterViewChecked      product.component.ts:61:12
+
+
+-->
+
+
+<button (click)="increasePrice()">+ Price</button>
+<!-- 
+
+ngDoCheck               product.component.ts:37:12
+ngAfterContentChecked   product.component.ts:49:12
+-----------------------------------------------------------------------
+price's ngOnChanges     price.component.ts:21:12
+Object { changes: {…} } price.component.ts:22:12
+
+{
+  "previousValue": 10,
+  "currentValue": 11,
+  "firstChange": false
+}
+
+-----------------------------------------------------------------------
+ngAfterViewChecked      product.component.ts:61:12
+
+-->
