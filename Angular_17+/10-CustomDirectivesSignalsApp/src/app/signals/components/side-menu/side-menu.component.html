@@ -1,0 +1,24 @@
+<ul class="list-group">
+  <!-- normal mode -->
+  <!-- <li 
+        *ngFor="let item of menuItems" 
+        class="list-group-item" 
+        [routerLink]="[item.router]"
+        routerLinkActive="active"
+    >
+        {{ item.title }}
+    </li> -->
+  <!-- signal mode -->
+  <li
+    *ngFor="let item of menuItems()"
+    class="list-group-item"
+    [routerLink]="[item.router]"
+    routerLinkActive="active"
+  >
+    {{ item.title }}
+  </li>
+</ul>
+
+<!-- signal -->
+<!-- <pre>{{ menuItems }}</pre>
+<pre>{{ menuItems() | json}}</pre> -->
