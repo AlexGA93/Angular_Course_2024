@@ -2,6 +2,15 @@
 
 This repository collects all the lessons learned from the lasts three version of this framework.
 
+- This project requires;
+    - Install a correct node version (20.12.0)
+
+    - Install angular cli locally:
+        ```
+        npm install @angular/cli@17.3.3
+        ```
+    
+
 ## Angular v16
 
 ### Init a new project
